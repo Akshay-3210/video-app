@@ -58,10 +58,10 @@ export default function Home() {
       animate={{y:0,opacity:1}}
       exit={{y:40,opacity:0}}
       transition={{duration:0.4}}
-      className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center"
+      className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center"
       >
         <div>
-          <Sparkle></Sparkle>
+          <Sparkle />
         </div>
         <div className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
           Incognito
@@ -72,11 +72,10 @@ export default function Home() {
         <motion.button
         whileHover={{scale:1.09}}
         whileTap={{scale:0.97}}
-        className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-linear-to-r from-white to-zinc-200 text-black 
-        font-semibold text-lg shadow-xl"
+        className="flex w-full max-w-xs items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-white to-zinc-200 px-8 py-4 text-black font-semibold text-lg shadow-xl sm:w-auto"
         onClick={startChat}
         >
-          <Video/> Start random chat
+          <Video /> Start random chat
         </motion.button>
 
       </motion.div>}
@@ -86,7 +85,7 @@ export default function Home() {
         animate={{opacity:1}}
         exit={{opacity:0}}
         transition={{duration:0.7}}
-        className="relative flex flex-col items-center justify-center min-h-screen gap-6"
+        className="relative flex min-h-screen flex-col items-center justify-center gap-6 px-6"
         >
             <motion.div
             animate={{rotate:360}}
@@ -97,7 +96,7 @@ export default function Home() {
             <motion.p
             animate={{opacity:[0.4,1,0.4]}}
             transition={{repeat:Infinity,ease:"linear",duration:1.1}}
-            className="text-lg sm:text-xl text-zinc-400"
+            className="text-lg sm:text-xl text-zinc-400 max-w-lg"
             >
               Matching you with someone new...
             </motion.p>
@@ -109,20 +108,19 @@ export default function Home() {
             animate={{opacity:1}}
             exit={{opacity:0}}
             transition={{duration:0.7}}
-            className=" inset-0 flex flex-col bg-black z-20"
+            className="inset-0 flex min-h-screen flex-col bg-black z-20"
             >
-              <div className="flex items-center justify-between px-4 sm:px-6bpy-4 bg-black/60 
-              backdrop-blur border-b border-white/10">
+              <div className="flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:px-6 bg-black/60 backdrop-blur border-b border-white/10">
                 <div className="flex items-center gap-2 text-zinc-400 text-sm">
                   <Globe size={16}/>
                   Incognito | Connected
                 </div>
-                <div>
+                <div className="flex justify-center sm:justify-end">
                   <motion.button
                   whileHover={{scale:1.05}}
                   whileTap={{scale:0.95}}
                   onClick={next}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-red-500 text-white font-medium"
+                  className="flex items-center gap-2 rounded-full bg-red-500 px-4 py-2 text-white font-medium"
                   >
                     <Shuffle size={16}/>
                     Next
@@ -130,8 +128,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
-              <VideoRoom roomId={roomId} />
+              <div className="flex-1 p-4 sm:p-6">
+                <VideoRoom roomId={roomId} />
               </div>
             </motion.div>
         )}

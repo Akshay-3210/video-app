@@ -54,7 +54,11 @@ function VideoRoom({ roomId }: { roomId: string }) {
     }
   }, [roomId])
 
-  return <div ref={containerRef} className="w-full h-80vh" />
+  return (
+    <div className="w-full min-h-[60vh] h-full rounded-3xl overflow-hidden bg-black">
+      <div ref={containerRef} className="w-full h-full" />
+    </div>
+  )
 }
 
 export default VideoRoom
